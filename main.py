@@ -44,7 +44,7 @@ dataCheck = {
 login = 'http://192.168.50.3:8080/eportal/InterFace.do?method=login'  # 登录地址
 checkStatus = 'http://192.168.50.3:8080/eportal/InterFace.do?method=getOnlineUserInfo'  # 验证地址
 
-target_url = "http://129.226.208.144:56009/"
+target_url = "http://yanderemoe.xyz/"
 data = {
     "status": "logout",
     "timestamp": "",

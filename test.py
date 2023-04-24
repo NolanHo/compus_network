@@ -1,3 +1,5 @@
+import json
+
 from urllib3 import encode_multipart_formdata
 
 import requests
@@ -10,5 +12,5 @@ data = {
     "ipv6": "",
 }
 # 发送表单数据
-res = requests.post(target_url, data=data)
+res = requests.post(target_url, data=json.dumps(data))
 print(res.text)

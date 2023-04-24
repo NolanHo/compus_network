@@ -88,7 +88,8 @@ def post_heartbeat():
         print(data)
         try:
             res = requests.post(target_url, data=json.dumps(data))
-            print(res.text)
+            if res.status_code == 200:
+                print("心跳发送成功, time: ", time.asctime(time.localtime(time.time())))
             time.sleep(30)
         except Exception as e:
             print(e)
@@ -96,7 +97,7 @@ def post_heartbeat():
             continue
 
 
-# Thread(target=post_heartbeat).start()
+Thread(target=post_heartbeat).start()
 
 while (True):
     try:

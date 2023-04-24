@@ -10,11 +10,7 @@ class Data(BaseModel):
     ipv6: str
 
 
-data = Data()
-data.status = "logout"
-data.timestamp = ""
-data.ipv4 = ""
-data.ipv6 = ""
+data = Data(status="logout", timestamp="", ipv4="", ipv6="")
 
 
 @app.get("/info")

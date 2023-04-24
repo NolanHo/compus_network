@@ -77,6 +77,7 @@ def work():
 
 import core
 
+
 def post_heartbeat():
     while True:
         ip_info = core.get_ip_address()
@@ -95,7 +96,7 @@ def post_heartbeat():
             continue
 
 
-Thread(target=post_heartbeat).start()
+# Thread(target=post_heartbeat).start()
 
 while (True):
     try:
@@ -104,4 +105,4 @@ while (True):
         print(time.asctime(time.localtime(time.time())), "监测出错，请检查网络是否连通。")
         time.sleep(1)
         continue
-    time.sleep(random.randint(20, 40))  # 这里间隔20~40秒查询一次状态，切莫太频繁
+    time.sleep(random.randint(300, 600))  # 这里间隔20~40秒查询一次状态，切莫太频繁

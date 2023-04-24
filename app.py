@@ -1,13 +1,13 @@
 from fastapi import FastAPI, Form
-
+from pydantic import BaseModel
 app = FastAPI()
 
 
-class Data:
-    status = ""
-    timestamp = ""
-    ipv4 = ""
-    ipv6 = ""
+class Data(BaseModel):
+    status: str
+    timestamp: str
+    ipv4: str
+    ipv6: str
 
 
 data = Data()
@@ -19,6 +19,8 @@ data.ipv6 = ""
 
 @app.get("/info")
 async def root():
+    if data.status == "":
+        data.status = "logout"
     return data
 
 
